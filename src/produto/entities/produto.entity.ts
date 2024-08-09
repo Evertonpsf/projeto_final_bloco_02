@@ -20,6 +20,12 @@ export class Produto {
     @Column({length: 255, nullable: false })
     @ApiProperty()
     quantidade: string;
+
+    
+    @IsNotEmpty()
+    @Column({length: 255, nullable: false })
+    @ApiProperty()
+    descricao: string;
     
     @IsNumber({maxDecimalPlaces: 2})
     @IsNotEmpty()
