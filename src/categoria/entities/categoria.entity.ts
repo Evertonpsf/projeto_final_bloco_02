@@ -1,6 +1,7 @@
 import { Transform, TransformFnParams } from "class-transformer";
 import { IsNotEmpty } from "class-validator";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Produto } from "../../produto/entities/produto.entity";
 
 @Entity({ name: "tb_categorias" })
 export class Categoria {
@@ -12,9 +13,7 @@ export class Categoria {
     @Transform(({ value }: TransformFnParams) => value?.trim())
     tipo: string;
 
-    //@OneToMany(() => Produto, (produto) => produto.categoria)
-    //produto: Produto[]
+    @OneToMany(() => Produto, (produto) => produto.categoria)
+    produto: Produto[]
 
-    //@OneToMany(() => Produto, (produto) => produto.categoria)
-    // produto: Produto[]
 }

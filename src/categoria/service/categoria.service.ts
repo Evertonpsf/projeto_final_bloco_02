@@ -15,7 +15,7 @@ export class CategoriaService {
 
     async findAll(): Promise<Categoria[]> {
         return await this.categoriaRepository.find({
-          // relations:{ produto: true }
+          relations:{ produto: true }
         });
     }
 
@@ -23,7 +23,7 @@ export class CategoriaService {
 
         let buscaCategoria = await this.categoriaRepository.findOne({
             where: {id},
-           // relations:{ produto: true}
+           relations:{ produto: true}
         })
 
         if (!buscaCategoria)
@@ -36,7 +36,7 @@ export class CategoriaService {
 
         return this.categoriaRepository.find({
             where: {},
-           // relations:{produto: true}
+           relations:{produto: true}
         })
     }
     async create(categoria: Categoria): Promise<Categoria> { 
