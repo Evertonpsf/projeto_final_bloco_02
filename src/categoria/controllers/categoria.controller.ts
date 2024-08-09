@@ -1,9 +1,10 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put } from "@nestjs/common";
 import { Categoria } from "../entities/categoria.entity";
 import { CategoriaService } from "../service/categoria.service";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 
 
-
+@ApiTags('Categoria')
 @Controller("/categorias")
 export class CategoriaController {
 

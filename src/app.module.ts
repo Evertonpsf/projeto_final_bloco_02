@@ -4,6 +4,7 @@ import { Categoria } from './categoria/entities/categoria.entity';
 import { CategoriaModules } from './categoria/categoria.module';
 import { Produto } from './produto/entities/produto.entity';
 import { ProdutoModules } from './produto/produto.module';
+import { AppController } from './app.controller';
 
 
 @Module({
@@ -17,13 +18,12 @@ import { ProdutoModules } from './produto/produto.module';
     database: 'db_farmacia',
     entities: [Categoria, Produto],
     synchronize: true,
-   // logging: true,
-   // bigNumberStrings: false,
+  
   }),
  CategoriaModules,
  ProdutoModules,
 ],
-  controllers: [],
+  controllers: [AppController],
   providers: [],
 })
 export class AppModule {}
