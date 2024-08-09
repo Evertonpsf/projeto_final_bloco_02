@@ -1,24 +1,24 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Categoria } from './categoria/entities/categoria.entity';
+import { CategoriaModules } from './categoria/categoria.module';
 
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-    // estamos fazendo a conexão com o banco de dados.
     type: 'mysql',
     host: 'localhost',
     port: 3306,
     username: 'root',
     password: 'root',
     database: 'db_farmacia',
-    entities: [],
+    entities: [Categoria],
     synchronize: true,
    // logging: true,
    // bigNumberStrings: false,
-
   }),
- // CategoriaModules,
+ CategoriaModules,
  // ProdutoModules,
 ],
   controllers: [],
